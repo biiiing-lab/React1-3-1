@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import './Middle_Test/Midterm';
+import Midterm from './Middle_Test/Midterm';
 
 function App() {
   return (
