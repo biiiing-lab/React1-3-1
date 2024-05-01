@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './src/reportWebVitals';
 import App from './src/App';
+import Accommodate from './chapter_9week/Accommodate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Accommodate />
   </React.StrictMode>
 );
 
