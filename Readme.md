@@ -1,3 +1,98 @@
+# 6월 12일 수업
+## css란?
+- 사용자에게 문서를 보여줄 때, 문서의 스타일을 꾸밀 때 사용하는 스타일 시트 언어
+- 글꼴, 배경색 등 지정, 선택자와 스타일로 이루어져 있음
+- 선택자 -> 적용 스타일을 세미콜론으로 구분하여 작성
+
+## 레이아웃과 관련된 속성(display, visibillity, position, flex box, font)
+### display 
+- 화면에 어떻게 배치할 것인가 결정하며 기본 값 변경이 가능함
+- none, block, inline, inline-block 총 네가지의 값이 있음
+
+### visibillity
+- 엘리먼드의 가시성
+- 화면에 보여주거나 숨기는 기능을 주로 함
+- visible, hidden, collapse, inherit 총 네 가지의 값이 있음
+
+### position
+- 엘리먼트를 어디에다 위치할 것인지 정의
+- top, left, bottom, right 총 네 가지의 속성이 있음
+
+### flex box
+- flex box 내 아이템 간 공간 배분과 강력한 정렬 기능을 제공
+- 1차원 레이아웃 모델로 설계
+- Container, item으로 구성
+
+### font
+- 글꼴 관련
+
+# 6월 11일 수업
+## specialization(특수화)
+- 한 컴포넌트를 다른 컴포넌트로부터 파생 시켜 특정한 기능이나 속성을 추가하거나 수정
+- 구별이 되게 구체화를 할 때 사용하는 용어
+- 재사용하며 새로운 특성 부여 가능
+- 합성을 사용
+
+## containment + specialization
+- 한 컴포넌트가 다른 컴포넌트를 자식 요소로 포함하는 것을 의미하며, 중첩된 구조를 만들어낼 수 있음
+- prop.children을 사용하며 정의한 props를 사용
+
+## 리액트 상속
+- 자식 클래스는 상위 클래스의 속성을 가질 수 있음
+- 보통 containment를 더 많이 사용하는 경향이 있음
+
+## context
+- 단계마다 일일이 props를 넘겨주지 않고도 컴포넌트 전체의 데이터를 제공할 수 있음
+- 애플리케이션 안의 여러 컴포넌트들에 전해줘야 하는 경우 번거로울 수 있음
+- 전역적 데이터를 공유할 수 있는 방법
+
+### context api
+
+``` const MyContext = React.createContext(defaultValue);```
+- context 객체를 만들고, 트리 상위에서 가장 가까이 있는 짝이 맞는 provider로부터 현재값을 읽음
+
+### context provider
+```<MyContext.Provider value={/* 어떤 값 */}>```
+- context를 구ㅈ독하는 컴포넌트들에게 context의 변화를 알리는 역할
+- value props를 받아 하위 컴포넌트에게 전달하며, 제한은 없음
+- provider 하위에서 context를 구독하는 모든 컴포넌트는 provider의 value props가 바뀔 때마다 다시 렌더링 됨
+
+## useContext
+- 기존에 React에 존재하는 Context를 더 편하게 사용하 수 있는 역할을 제공
+
+## useState vs useContext
+**userState** 컴포넌트 내부의 상태를 관리하고, 컴포넌트가 리렌더링 될 떄마다 해당 상태가 유지됨 <br>
+**useContext** 전역 상태를 관리하고, 여러 컴포넌트 간에 같은 상태를 공유해야 하는 경우 사용
+
+따라서, 컴포넌트 내부에서만 사용되는 상태에서는 **useState**를 사용하고, 여러 컴포넌트에서 공유되어야 하는 상태에서는 **useContext**를 사용한다.
+
+# 6월 5일 수업
+## shared state
+- 부모 컴포넌트의 state를 공유하여 사용하며, 여러 개의 하위 컴포넌트에서 공통적으로 사용하는 경우
+
+### Lifting state up (끌어올리기)
+- 두 컴포넌트의 state가 함께 변경 되는 것을 구현하려면 state를 따로 관리하면 안 되며, 부모 컴포넌트에서 state를 만든 뒤 props를 통해 state를 각각 전달하는 행위
+
+## composition(합성), Containment
+- 하나 이상의 컴포넌트를 결합하여 새로운 컴포넌트를 생성하는 방식
+- childern props를 사용하여 자식 element를 출력에 그대로 전달하며, childern props는 리액트에서 기본적으로 제공
+
+# 5월 29일 수업
+## form
+- 사용자의 입력 받기
+
+## 제어 컴포넌트
+- 리액트의 입력 폼 element를 의미
+
+## textarea
+- 여러 내용을 받기 위한 텍스트 박스
+
+## select
+- 드롭다운 메뉴 태그
+
+## file input
+- 읽기 전용이며, 비제어 컴포넌트
+
 # 5월 22일 수업
 ## 리스트, 키
 - 리스트 Array : 변수나 객체를 하나의 변수로 묶어 놓은 것
