@@ -1,11 +1,11 @@
 import './App.css';
-import LangingPage from './chapter_12week/LandingPage';
-import ToolBar from './chapter_12week/ToolBar';
+import Blocks from './chapter_14Week/Blocks';
+
 
 function App() {
   return (
     <div className="App">
-     <LangingPage />
+     <Blocks />
     </div>
   );
 }
